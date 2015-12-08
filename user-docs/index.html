@@ -71,16 +71,15 @@ h1,h2,h3,h4,h5,h6 {
 <h1>Adj Framework</h1>
 
 <p class="deemphasize">Note: This user guide's SVG images show in modern
-browsers, i.e. Firefox, Chrome, Safari, Opera, Internet Explorer 9 and newer.
-Older versions Internet Explorer, 8 and earlier, show the <code>alt</code> tag
-text of those <code>img</code> elements instead. Internet Explorer users will
-be <a href="#L2433">better off</a> with Internet Explorer 11 anyway.</p>
+browsers, i.e. Firefox, Chrome, Safari, Opera, Internet Explorer 11 or newer.
+Very old browsers show the <code>alt</code> tag text of those <code>img</code>
+elements instead.</p>
 
 <div class="toc">
 <ul>
   <li><a href="#L7142">1. User Guide</a> 
     <ul>
-      <li><a href="#L4238">1.1. Modified BSD License</a></li>
+      <li><a href="#L4238">1.1. Simplified BSD License</a></li>
       <li><a href="#L4276">1.2. Contributors</a></li>
       <li><a href="#L4291">1.3. Contact</a></li>
       <li><a href="#L8534">1.4. Repository</a> 
@@ -129,6 +128,7 @@ be <a href="#L2433">better off</a> with Internet Explorer 11 anyway.</p>
           <li><a href="#L45423">1.11.19. Command telescopicTree Options</a></li>
           <li><a href="#L11198">1.11.20. Command paragraph Options</a></li>
           <li><a href="#L94550">1.11.21. Command hide Options</a></li>
+          <li><a href="#L3450">1.11.22. Command include Options</a></li>
         </ul>
       </li>
       <li><a href="#L7600">1.12. Auxiliary Commands</a> 
@@ -171,9 +171,9 @@ be <a href="#L2433">better off</a> with Internet Explorer 11 anyway.</p>
       <li><a href="#L6329">1.19. Invocation</a> 
         <ul>
           <li><a href="#L6331">1.19.1. Explicit Invocation</a></li>
-          <li><a href="#L6345">1.19.2. No Invocation – If Saving Processed
+          <li><a href="#L3737">1.19.2. Explicit Invocation And Saving Processed
             Document</a></li>
-          <li><a href="#L3737">1.19.3. Explicit Invocation And Saving Processed
+          <li><a href="#L6345">1.19.3. No Invocation – If Saving Processed
             Document</a></li>
           <li><a href="#L">1.19.4. Implicit Invocation</a></li>
         </ul>
@@ -226,12 +226,13 @@ be <a href="#L2433">better off</a> with Internet Explorer 11 anyway.</p>
           <li><a href="#L46669">1.27.5. Firefox 32</a></li>
         </ul>
       </li>
-      <li><a href="#L1688">1.28. Example Files</a> 
+      <li><a href="#L11982">1.28. SVG inline in HTML</a></li>
+      <li><a href="#L1688">1.29. Example Files</a> 
         <ul>
-          <li><a href="#L5397">1.28.1. Example File 001 Source Code</a></li>
-          <li><a href="#L5412">1.28.2. Example File 002</a></li>
-          <li><a href="#L1730">1.28.3. Example File 003</a></li>
-          <li><a href="#L5916">1.28.4. Example File 004</a></li>
+          <li><a href="#L5397">1.29.1. Example File 001 Source Code</a></li>
+          <li><a href="#L5412">1.29.2. Example File 002</a></li>
+          <li><a href="#L1730">1.29.3. Example File 003</a></li>
+          <li><a href="#L5916">1.29.4. Example File 004</a></li>
         </ul>
       </li>
     </ul>
@@ -241,8 +242,8 @@ be <a href="#L2433">better off</a> with Internet Explorer 11 anyway.</p>
 
 <h2 id="L7142">1. User Guide</h2>
 
-<h3 id="L4238">1.1. Modified BSD License</h3>
-<pre class="deemphasize">// Copyright (c) 2002-2014, Nirvana Research
+<h3 id="L4238">1.1. Simplified BSD License</h3>
+<pre class="deemphasize">// Copyright (c) 2002-2015, Nirvana Research
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -252,20 +253,17 @@ be <a href="#L2433">better off</a> with Internet Explorer 11 anyway.</p>
 //     * Redistributions in binary form must reproduce the above copyright
 //       notice, this list of conditions and the following disclaimer in the
 //       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the copyright holder nor the names of
-//       contributors may be used to endorse or promote products derived from
-//       this software without specific prior written permission.
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS IS" AND
 // ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 // WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT,
-// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
-// OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-// NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-// EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</pre>
+// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+// ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+// (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+// LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+// ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+// SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</pre>
 
 <h3 id="L4276">1.2. Contributors</h3>
 <pre class="deemphasize">// Idea and first implementation - Leo Baschy &lt;srguiwiz12 AT nrvr DOT com&gt;
@@ -286,8 +284,8 @@ be <a href="#L2433">better off</a> with Internet Explorer 11 anyway.</p>
 
 <h3 id="L38358">1.5. For The Impatient</h3>
 
-<p>If you have seen a demo, or attended a class, and quickly want to get
-started on your own, these three points may be for you:</p>
+<p>If you have seen a demo or attended a class, and quickly want to get started
+on your own, consider:</p>
 <ul>
   <li>a discussion of <a href="#L6329">Invocation</a></li>
   <li>a <a href="#L1888">Complete Authoring Workflow</a></li>
@@ -823,6 +821,21 @@ Here is more.
 <span class="deemphasize-code">&lt;/svg&gt;</span></pre>
       </td>
     </tr>
+    <tr>
+      <td><img alt="example" src="adj-ex-080-include.svg"></img></td>
+      <td><pre class="example-listing"><span class="deemphasize-code">&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:adj="http://www.nrvr.com/2012/adj" <span class="example-code">xmlns:xlink="http://www.w3.org/1999/xlink"</span>&gt;
+  &lt;rect width="200" height="140" fill="linen"/&gt;</span>
+  &lt;g adj:command="horizontalList" adj:gap="2" adj:itemsH2V="1"&gt;
+    &lt;rect width="40" height="80" fill="#222"/&gt;
+    &lt;g&gt;
+      <span class="example-code">&lt;adj:<a href="#L3450">include</a> xlink:href="subdir-080/adj-ex-080-include-to-include.svg"/&gt;</span>
+    &lt;/g&gt;
+    &lt;rect width="40" height="40" fill="#444"/&gt;
+    &lt;rect width="80" height="40" fill="#888"/&gt;
+  &lt;/g&gt;
+<span class="deemphasize-code">&lt;/svg&gt;</span></pre>
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -847,7 +860,6 @@ Here is more.
     &lt;rect width="34" height="24" fill="#444"/&gt;
     &lt;rect width="36" height="26" fill="#666"/&gt;
     &lt;rect width="38" height="28" fill="#888"/&gt;
-    &lt;rect width="40" height="30" fill="#aaa"/&gt;
   &lt;/g&gt;
 <span class="deemphasize-code">&lt;/svg&gt;</span></pre>
       </td>
@@ -2494,6 +2506,68 @@ command <code>paragraph</code>.</p>
   </tbody>
 </table>
 
+<h4 id="L3450">1.11.22. Command include Options</h4>
+
+<table border="1">
+  <tbody>
+    <tr>
+      <td><img alt="example" src="adj-ex-080-include.svg"></img></td>
+      <td><pre class="example-listing"><span class="deemphasize-code">&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:adj="http://www.nrvr.com/2012/adj" <span class="example-code">xmlns:xlink="http://www.w3.org/1999/xlink"</span>&gt;
+  &lt;rect width="200" height="140" fill="linen"/&gt;</span>
+  &lt;g adj:command="horizontalList" adj:gap="2" adj:itemsH2V="1"&gt;
+    &lt;rect width="40" height="80" fill="#222"/&gt;
+    &lt;g&gt;
+      <span class="example-code">&lt;adj:include xlink:href="subdir-080/adj-ex-080-include-to-include.svg"/&gt;</span>
+    &lt;/g&gt;
+    &lt;rect width="40" height="40" fill="#444"/&gt;
+    &lt;rect width="80" height="40" fill="#888"/&gt;
+  &lt;/g&gt;
+<span class="deemphasize-code">&lt;/svg&gt;</span></pre>
+      </td>
+    </tr>
+    <tr>
+      <td><img alt="example" src="adj-ex-081-include-fragment.svg"></img></td>
+      <td><pre class="example-listing"><span class="deemphasize-code">&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:adj="http://www.nrvr.com/2012/adj" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+  &lt;rect width="200" height="140" fill="linen"/&gt;</span>
+  &lt;g adj:command="horizontalList" adj:gap="2" adj:itemsH2V="1"&gt;
+    &lt;rect width="40" height="80" fill="#222"/&gt;
+    &lt;g&gt;
+      &lt;adj:include xlink:href="subdir-080/adj-ex-080-include-to-include.svg<span class="example-code">#four</span>"/&gt;
+    &lt;/g&gt;
+    &lt;rect width="40" height="40" fill="#444"/&gt;
+    &lt;rect width="80" height="40" fill="#888"/&gt;
+  &lt;/g&gt;
+<span class="deemphasize-code">&lt;/svg&gt;</span></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Command <code>include</code> parameter <code>xlink:href</code> is required.
+Note the required <a href="http://www.w3.org/TR/xlink/">XLink</a> namespace, as
+is commonly used in <a href="http://www.w3.org/Graphics/SVG/">SVG</a>.</p>
+
+<p>Command <code>include</code> causes asynchronous execution when invoking
+<code>Adj.doSvg()</code>.</p>
+
+<p><span class="todo">TODO: write a short section in this user guide to
+describe sometimes asynchronous execution of <code>Adj.doSvg()</code>, which
+supports a callback function</span></p>
+
+<p>There is or should be no problem, no special attention required, with
+<code>http</code> links on the same server.</p>
+
+<p>As implemented, <code>include</code> is subject to browser imposed
+restrictions of cross-origin HTTP requests, via <code>XMLHttpRequest</code>. A
+mechanism often used in this context is Cross-Origin Resource Sharing (<a
+href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS</a>).</p>
+
+<p>For best productivity when using URI scheme <code>file</code>, a Firefox
+add-on <span class="product-name">File URI Scheme GET from Page Script</span>,
+from <a
+href="https://addons.mozilla.org/en-US/firefox/addon/file-scheme-get-from-script/">https://addons.mozilla.org/en-US/firefox/addon/file-scheme-get-from-script/</a><span
+class="deemphasize">, e.g. 1.0.2,</span> is available.</p>
+
 <h3 id="L7600">1.12. Auxiliary Commands</h3>
 
 <h4 id="L7602">1.12.1. Option explain</h4>
@@ -2813,7 +2887,8 @@ instances of command <code><a href="#L94550">hide</a></code>.</p>
   </tbody>
 </table>
 
-<p>The optional second parameter tells whether to invoke <code>doDoc</code>.</p>
+<p>The optional second parameter tells whether to invoke
+<code>Adj.doSvg()</code>.</p>
 
 <p>Similarly there are functions <code>hideSiblingsFollowing</code> and
 <code>unhideSiblingsFollowing</code>.</p>
@@ -2954,15 +3029,43 @@ the referencing element. That is more narrow of a search than function
     <tr>
       <td><img alt="example" src="adj-ex-057-variable.svg"></img></td>
       <td><pre class="example-listing"><span class="deemphasize-code">&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:adj="http://www.nrvr.com/2012/adj"&gt;
-  &lt;rect width="200" height="160" fill="linen"/&gt;</span>
+  &lt;rect width="200" height="100" fill="linen"/&gt;</span>
   <span class="example-code">&lt;adj:variable name="myvar" value="10" desc="optional description of variable"/&gt;</span>
-  &lt;rect adj:id="one" x="15" y="65" width="40" height="30" fill="#000"/&gt;
-  &lt;rect adj:id="other" x="95" y="15" width="40" height="30" fill="#666"/&gt;
-  &lt;rect adj:id="another" x="145" y="115" width="40" height="30" fill="#aaa"/&gt;
+  &lt;rect adj:id="one" x="15" y="45" width="40" height="10" fill="#000"/&gt;
+  &lt;rect adj:id="other" x="95" y="15" width="40" height="10" fill="#666"/&gt;
+  &lt;rect adj:id="another" x="145" y="75" width="40" height="10" fill="#aaa"/&gt;
   &lt;path adj:command="vine" stroke="#777" stroke-width="2" fill="none" d="M0,0" adj:d="
     M ~one#xw + <span class="example-code">^myvar</span>, ~one#cy
     C ~one#xw + <span class="example-code">^myvar</span>, ~one#cy - 20  ~other#cx - 20, ~other#yh + <span class="example-code">^myvar</span>  ~other#cx, ~other#yh + <span class="example-code">^myvar</span>
     S ~another#x - <span class="example-code">^myvar</span>, ~another#cy - 20  ~another#x - <span class="example-code">^myvar</span>, ~another#cy"/&gt;
+<span class="deemphasize-code">&lt;/svg&gt;</span></pre>
+      </td>
+    </tr>
+    <tr>
+      <td><img alt="example" src="adj-ex-057b-variable-scope.svg"></img></td>
+      <td><pre class="example-listing"><span class="deemphasize-code">&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:adj="http://www.nrvr.com/2012/adj"&gt;
+  &lt;rect width="200" height="200" fill="linen"/&gt;</span>
+  &lt;adj:variable <span class="example-code">name="myvar" value="10"</span> desc="in outer scope"/&gt;
+  &lt;g&gt;
+    &lt;adj:variable <span class="example-code">name="myvar" value="3"</span> desc="in inner scope #1"/&gt;
+    &lt;rect adj:id="one" x="15" y="45" width="40" height="10" fill="#000"/&gt;
+    &lt;rect adj:id="other" x="95" y="15" width="40" height="10" fill="#666"/&gt;
+    &lt;rect adj:id="another" x="145" y="75" width="40" height="10" fill="#aaa"/&gt;
+    &lt;path adj:command="vine" stroke="#777" stroke-width="2" fill="none" d="M0,0" adj:d="
+      M ~one#xw + ^myvar, ~one#cy
+      C ~one#xw + ^myvar, ~one#cy - 20  ~other#cx - 20, ~other#yh + ^myvar  ~other#cx, ~other#yh + ^myvar
+      S ~another#x - ^myvar, ~another#cy - 20  ~another#x - ^myvar, ~another#cy"/&gt;
+  &lt;/g&gt;
+  &lt;g transform="translate(0,100)"&gt;
+    &lt;adj:variable <span class="example-code">name="myvar" value="17"</span> desc="in inner scope #2"/&gt;
+    &lt;rect adj:id="one" x="15" y="45" width="40" height="10" fill="#000"/&gt;
+    &lt;rect adj:id="other" x="95" y="15" width="40" height="10" fill="#666"/&gt;
+    &lt;rect adj:id="another" x="145" y="75" width="40" height="10" fill="#aaa"/&gt;
+    &lt;path adj:command="vine" stroke="#777" stroke-width="2" fill="none" d="M0,0" adj:d="
+      M ~one#xw + ^myvar, ~one#cy
+      C ~one#xw + ^myvar, ~one#cy - 20  ~other#cx - 20, ~other#yh + ^myvar  ~other#cx, ~other#yh + ^myvar
+      S ~another#x - ^myvar, ~another#cy - 20  ~another#x - ^myvar, ~another#cy"/&gt;
+  &lt;/g&gt;
 <span class="deemphasize-code">&lt;/svg&gt;</span></pre>
       </td>
     </tr>
@@ -3307,53 +3410,44 @@ attribute name must not appear more than once in the same element.</p>
 
 <h3 id="L1888">1.18. Complete Authoring Workflow</h3>
 
-<p>An author may increase productivity by using browser add-ons.</p>
+<p>An author can increase productivity by using browser add-ons.</p>
 
-<p>It is noted that those who don't like using existing Firefox add-ons could
-implement alternate workflows and tools to support such workflows. E.g. Chrome
-extensions. The product of authoring should not depend on the brand of
-auxiliary authoring tools used.</p>
-<a name="example-workflow-description"></a> 
+<p>Those who don't like using existing Firefox add-ons could implement
+alternate workflows and tools, e.g. Chrome extensions. Resulting images should
+not depend on the brand authoring tools used.</p>
 
 <p>An example workflow:</p>
 <ul>
   <li>Requirements 
     <ul>
-      <li>an XML editor<span class="deemphasize">, e.g. awesome <span
+      <li>an XML editor<span class="deemphasize">, e.g. excellent <span
         class="product-name">Altova <a
-        href="http://www.altova.com/xml-editor/">XMLSpy</a></span>, <span
-        class="product-name">Adobe <a
-        href="http://www.adobe.com/products/dreamweaver.html">Dreamweaver</a></span>,
-        free <span class="product-name">ActiveState <a
-        href="http://www.activestate.com/komodo-edit">Komodo Edit</a></span>
-        for Windows, Mac, Linux</span></li>
+        href="http://www.altova.com/xml-editor/">XMLSpy</a></span></span></li>
       <li>a <span class="product-name"><a
         href="https://www.mozilla.org/firefox/#desktop">Firefox</a></span><span
-        class="deemphasize">, e.g. version 16 in Windows, version 10 in
+        class="deemphasize">, e.g. version 41 in Windows, version 38 in
         Linux</span></li>
-      <li>Firefox add-ons 
+      <li>Firefox add-ons <a
+        href="https://addons.mozilla.org/en-US/firefox/collections/srguiwiz/adj-helpers/">https://addons.mozilla.org/en-US/firefox/collections/srguiwiz/adj-helpers/</a><br
+        />
+
         <ul>
+          <li>Either get all three from that collection <br />
+            OR at least</li>
           <li><span class="product-name">Auto Reload</span>, from <a
             href="https://addons.mozilla.org/en-US/firefox/addon/auto-reload/">https://addons.mozilla.org/en-US/firefox/addon/auto-reload/</a><span
-            class="deemphasize">, e.g. version 1.13</span></li>
-          <li><span class="product-name">Save Back to File from DOM</span>, aka
-            <code>save-back-to-file-from-dom.xpi</code>, from <a
+            class="deemphasize">, e.g. version 1.20</span></li>
+          <li><span class="product-name">Save Back to File from DOM</span>,
+            from <a
             href="https://addons.mozilla.org/en-US/firefox/addon/save-back-to-file-from-dom/">https://addons.mozilla.org/en-US/firefox/addon/save-back-to-file-from-dom/</a><span
-            class="deemphasize">, e.g. 1.rev22</span></li>
-          <li>only if wanting implicit <a href="#L6329">invocation</a> then –
-            <span class="product-name">Onload Script Some Document
-            Files</span>, aka
-            <code>onload-script-some-document-files.xpi</code>, from <a
-            href="https://addons.mozilla.org/en-US/firefox/addon/onload-script-some-documents/">https://addons.mozilla.org/en-US/firefox/addon/onload-script-some-documents/</a><span
-            class="deemphasize">, e.g. 1.rev42</span> – not needed for
-            explicit invocation</li>
+            class="deemphasize">, e.g. 1.0.26</span></li>
         </ul>
       </li>
       <li>Set up a directory which will contain files</li>
       <li>Make sure that directory contains a subdirectory with a file
-        <code>.adj-js/adj.js</code>, which is a copy of <span
-        class="emphasize">the essential <code><a
-        href="js/adj.js">adj.js</a></code> file from this project</span></li>
+        <code>js/adj.js</code>, which is a copy of <span class="emphasize">the
+        essential <code><a href="js/adj.js">adj.js</a></code> file from this
+        project</span></li>
     </ul>
   </li>
   <li>Steps 
@@ -3361,22 +3455,19 @@ auxiliary authoring tools used.</p>
       <li>write SVG in XML editor</li>
       <li>save to disk</li>
       <li>open in <span class="product-name">Firefox</span> browser</li>
-      <li>watch the effects of invocation <span class="deemphasize">– if
-        implicit invocation then courtesy of the <span
-        class="product-name">Onload Script Some Document Files</span>
-        add-on</span></li>
+      <li>watch the effects of invocation</li>
       <li>keep fixing SVG in editor and saving to disk</li>
       <li>keep watching the effects of automatic reloading, courtesy of the
         <span class="product-name">Auto Reload</span> add-on</li>
       <li>when done click the <span class="product-name">Save Back to File from
-        DOM</span> add-on icon or select the <span class="product-name">Save
-        Back to File from DOM</span> context menu item to save the Adj modified
-        SVG back into the file, for document distribution without the Adj
-        JavaScript library</li>
+        DOM</span> add-on icon <span class="deemphasize">or select the <span
+        class="product-name">Save Back to File from DOM</span> context menu
+        item</span> to save the Adj modified SVG back into the file<span
+        class="deemphasize">, for most compatible document
+      distribution</span></li>
     </ul>
   </li>
 </ul>
-<a name="example-workflow"></a> 
 
 <p>A diagram of this <a href="#example-workflow-description">example
 workflow</a>:</p>
@@ -3391,15 +3482,19 @@ is to use <span class="deemphasize">and to set up</span></span></p>
 
 <h3 id="L6329">1.19. Invocation</h3>
 
-<p>Invoking Adj is relatively simple, once you have decided which option works
-best for you.</p>
+<p>Invoking Adj is relatively simple<span class="deemphasize">, once you decide
+which option works best for you</span>.</p>
+<ul>
+  <li>You could use Adj most simply: With mere <a href="#L6331">explicit
+    invocation</a>,<br />
+    OR</li>
+  <li>you could use Adj like many SVG files in this documentation have been
+    made: <a href="#L3737">Explicit invocation <span
+    class="emphasize">and</span> saving processed document</a>. Look at their
+    source code.</li>
+</ul>
 
-<p>You could use Adj the same way many SVG files in this documentation are
-using it: <a href="#L3737">Explicit invocation <span
-class="emphasize">and</span> saving processed document</a>. Look at their
-source code.</p>
-
-<p>Here, however, for the sake of completeness, more choices are explained.</p>
+<p>For the sake of completeness, other choices are explained too.</p>
 
 <h4 id="L6331">1.19.1. Explicit Invocation</h4>
 
@@ -3407,7 +3502,7 @@ source code.</p>
 Adj can be invoked explicitly, e.g. like</p>
 <pre class="example-listing">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-flat-20030114.dtd"&gt;
-&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:adj="http://www.nrvr.com/2012/adj" xmlns:xlink="http://www.w3.org/1999/xlink" <span class="example-code">onload="Adj.doDoc();"</span>&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:adj="http://www.nrvr.com/2012/adj" xmlns:xlink="http://www.w3.org/1999/xlink" <span class="example-code">onload="Adj.doSvg();"</span>&gt;
   <span class="example-code">&lt;script type="text/javascript" xlink:href="js/adj.js"/&gt;</span>
   &lt;g&gt;…</pre>
 
@@ -3415,7 +3510,35 @@ Adj can be invoked explicitly, e.g. like</p>
 class="emphasize">the essential <code><a href="js/adj.js">adj.js</a></code>
 file from this project</span>.</p>
 
-<h4 id="L6345">1.19.2. No Invocation – If Saving Processed Document</h4>
+<h4 id="L3737">1.19.2. Explicit Invocation And Saving Processed Document</h4>
+
+<p>For best results for most users, Adj can be invoked <a
+href="#L6331">explicitely</a> <span class="emphasize">and</span> the processed
+document <span class="emphasize">can be saved</span>.</p>
+
+<p>Benefits:</p>
+<ul>
+  <li>Users that are set <span class="emphasize">not</span> to allow script
+    invocation will see an image that in case it isn't perfect still should be
+    acceptable.</li>
+  <li>All other users, hopefully <span class="emphasize">most or all</span>
+    users, will get the benefit of dynamic adjustment.</li>
+</ul>
+
+<p>Most SVG files in this documentation have been processed this way. You can
+look at their source code.</p>
+
+<p>SVG files in this documentation so far have been finalized with the help of
+Firefox add-on <a
+href="https://addons.mozilla.org/en-US/firefox/addon/save-back-to-file-from-dom/"><span
+class="product-name">Save Back to File from DOM</span></a>. It has become an
+easy habit to work this way.</p>
+
+<p>An <a href="#example-workflow-description">example workflow</a> combining
+explicit invocation and saving processed documents has been described <a
+href="#example-workflow-description">above</a>.</p>
+
+<h4 id="L6345">1.19.3. No Invocation – If Saving Processed Document</h4>
 
 <p>If chosen to do so, with an author saving a processed document, <span
 class="emphasize">invocation in users' browsers can be avoided</span>.</p>
@@ -3424,11 +3547,6 @@ class="emphasize">invocation in users' browsers can be avoided</span>.</p>
 href="https://addons.mozilla.org/en-US/firefox/addon/save-back-to-file-from-dom/"><span
 class="product-name">Save Back to File from DOM</span></a> can do the necessary
 saving, obviating invocation.</p>
-
-<p>An <a href="#example-workflow-description">example workflow</a> combining
-implicit invocation and <span class="emphasize">saving processed
-documents</span> has been described <a
-href="#example-workflow-description">above</a>.</p>
 
 <p>Avoiding invocation in users' browsers may mean less problems with viewing
 in users' browsers that are set not to allow script invocation.</p>
@@ -3440,27 +3558,6 @@ need to distribute the Adj JavaScript library</span>.</p>
 inability to dynamically adjust, e.g. to different fonts available in a
 different browser instance. This may be an acceptable compromise.</p>
 
-<h4 id="L3737">1.19.3. Explicit Invocation And Saving Processed Document</h4>
-
-<p>For best results for most users, Adj can be invoked <a
-href="#L6331">explicitely</a> <span class="emphasize">and</span> the processed
-document can be saved.</p>
-<ul>
-  <li>Users that are set <span class="emphasize">not</span> to allow script
-    invocation will see an image that in case it isn't perfect still should be
-    acceptable.</li>
-  <li>All other users, that hopefully being <span class="emphasize">most</span>
-    users, will get the benefit of dynamic adjustment.</li>
-</ul>
-
-<p>Most SVG files in this documentation have been processed this way. You can
-look at their source code.</p>
-
-<p>It has become an easy habit to work this way. SVG files in this
-documentation so far have been finalized with the help of Firefox add-on <a
-href="https://addons.mozilla.org/en-US/firefox/addon/save-back-to-file-from-dom/"><span
-class="product-name">Save Back to File from DOM</span></a>.</p>
-
 <h4 id="L">1.19.4. Implicit Invocation</h4>
 
 <p>With script injection, explicit invocation can be avoided.</p>
@@ -3470,8 +3567,8 @@ href="https://addons.mozilla.org/en-US/firefox/addon/onload-script-some-document
 class="product-name">Onload Script Some Document Files</span></a> can do the
 necessary script injection, effecting implicit invocation.</p>
 
-<p>Implicit invocation possibly is of interest to authors who want to
-distribute processed documents only.</p>
+<p>Implicit invocation might be of interest to authors who want to distribute
+processed documents only.</p>
 
 <h3 id="L86788">1.20. More Details</h3>
 
@@ -3534,7 +3631,7 @@ lines. This could be improved depending on user feedback.</p>
 <h4 id="L4599">1.20.4. Exception Handling</h4>
 
 <p>A visual display is provided instead of the expected SVG in case a
-JavaScript exception occurs in an invocation of <code>Adj.doDoc();</code>.</p>
+JavaScript exception occurs in an invocation of <code>Adj.doSvg();</code>.</p>
 
 <h4 id="L2915">1.20.5. Bad Command Handling</h4>
 
@@ -3592,10 +3689,7 @@ function calls.</p>
 the Adj JavaScript library as needed, partially or wholly.</p>
 
 <p>One entry point could be explicit invocation with
-<code>Adj.doDoc();</code>.</p>
-
-<p>Similarly, an entry point could be explicit invocation with
-<code>Adj.doSvg(svgElement);</code>.</p>
+<code>Adj.doSvg();</code>.</p>
 
 <p>Another kind of entry point could be the setting of algorithms to be applied
 to an element. E.g. the concise form Adj command</p>
@@ -3833,8 +3927,8 @@ please use contact and/or repository info provided <a
 href="#L4276">above</a>.</p>
 
 <p><span class="todo">TODO: describe use of
-<code>Adj.doDocAndStashIfNoStashYet()</code> instead of
-<code>Adj.doDoc()</code> for preparing documents for testing</span></p>
+<code>Adj.doSvgAndStashIfNoStashYet()</code> instead of
+<code>Adj.doSvg()</code> for preparing documents for testing</span></p>
 
 <h3 id="L2374">1.27. Compatibility Issues</h3>
 
@@ -3899,9 +3993,23 @@ suite</a>.</p>
 hyperlink <code>a</code> element can cause line height calculation on Firefox
 to be wrong. See command <code><a href="#L11198">paragraph</a></code>.</p>
 
-<h3 id="L1688">1.28. Example Files</h3>
+<h3 id="L11982">1.28. SVG inline in HTML</h3>
 
-<h4 id="L5397">1.28.1. Example File 001 Source Code</h4>
+<p>Support for SVG inline in HTML is a relatively new addition since Adj
+5.0.</p>
+
+<p>Documentation, examples, and description of limitations and caveats should
+be provided in time.</p>
+
+<p><span class="todo">TODO: document Adj in SVG inline in HTML</span></p>
+
+<p>A simple first example is in JS Bin at <a
+href="http://jsbin.com/tulaceh/edit?html,output">http://jsbin.com/tulaceh/edit?html,output</a>,
+which should let you experiment, clone, etc..</p>
+
+<h3 id="L1688">1.29. Example Files</h3>
+
+<h4 id="L5397">1.29.1. Example File 001 Source Code</h4>
 
 <p>The source code, before <a
 href="adj-ex-041-workflow-version-pure.svg">processing</a>, of this older
@@ -3911,7 +4019,7 @@ version</p>
 <p>of <a href="#example-workflow">above</a> diagram of the example workflow:</p>
 <pre class="example-listing">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:adj="http://www.nrvr.com/2012/adj" xmlns:xlink="http://www.w3.org/1999/xlink"
-     onload="Adj.doDoc();" width="200" height="120"&gt;
+     onload="Adj.doSvg();" width="200" height="120"&gt;
     &lt;script type="text/javascript" xlink:href="js/adj.js"/&gt;
     &lt;title&gt;Example Workflow&lt;/title&gt;
     &lt;!-- Illustration idea and first version - Leo Baschy &lt;srguiwiz12 AT nrvr DOT com&gt; --&gt;
@@ -3988,15 +4096,6 @@ version</p>
                     &lt;text&gt;Auto Reload&lt;/text&gt;
                     &lt;text&gt;add-on&lt;/text&gt;
                 &lt;/g&gt;
-                &lt;g adj:id="add-on-onload-script"&gt;
-                    &lt;adj:verticalList gap="5"/&gt;
-                    &lt;rect width="0" height="0" class="subject"&gt;
-                        &lt;adj:frameForParent inset="1"/&gt;
-                    &lt;/rect&gt;
-                    &lt;text&gt;Onload Script&lt;/text&gt;
-                    &lt;text&gt;Document Files&lt;/text&gt;
-                    &lt;text&gt;add-on&lt;/text&gt;
-                &lt;/g&gt;
                 &lt;g adj:id="add-on-save-back"&gt;
                     &lt;adj:verticalList gap="5"/&gt;
                     &lt;rect width="0" height="0" class="subject"&gt;
@@ -4038,16 +4137,6 @@ version</p>
             &lt;/g&gt;
         &lt;/g&gt;
         &lt;g&gt;
-            &lt;adj:connection from="add-on-onload-script % 0.2, -0.05" to="add-on-onload-script % 0.8, -0.05"/&gt;
-            &lt;path class="arrow" d="M0,0 q50,-50 100,0" stroke-width="3" marker-end="url(#arrowhead)"/&gt;
-            &lt;g&gt;
-                &lt;adj:rider at="0.5" pin="0.5,1"/&gt;
-                &lt;adj:verticalList gap="1"/&gt;
-                &lt;text&gt;on load&lt;/text&gt;
-                &lt;text&gt;runs script&lt;/text&gt;
-            &lt;/g&gt;
-        &lt;/g&gt;
-        &lt;g&gt;
             &lt;adj:connection from="add-on-save-back % 0.6, -0.05" to="subject-disk % 0.6, 1.2"/&gt;
             &lt;path class="arrow" d="M0,0 q50,10 100,0" stroke-width="3" marker-end="url(#arrowhead)"/&gt;
             &lt;g&gt;
@@ -4079,19 +4168,19 @@ version</p>
     &lt;/g&gt;
 &lt;/svg&gt;</pre>
 
-<h4 id="L5412">1.28.2. Example File 002</h4>
+<h4 id="L5412">1.29.2. Example File 002</h4>
 
 <p>An example:</p>
 <img alt="example image 002" src="adj-ex-042-image.svg"
 style="max-width:95%;max-height:auto;"></img> 
 
-<h4 id="L1730">1.28.3. Example File 003</h4>
+<h4 id="L1730">1.29.3. Example File 003</h4>
 
 <p>An example:</p>
 <img alt="example image 003" src="adj-ex-043-image.svg"
 style="max-width:95%;max-height:auto;"></img> 
 
-<h4 id="L5916">1.28.4. Example File 004</h4>
+<h4 id="L5916">1.29.4. Example File 004</h4>
 
 <p>An example:</p>
 <img alt="example image 004" src="adj-ex-044-image.svg"

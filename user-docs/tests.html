@@ -56,14 +56,31 @@ h1,h2,h3,h4,h5,h6 {
 <body>
 <h1>Adj Framework - Test Suite</h1>
 
-<p class="deemphasize">For more abiut Adj, see the <a href="index.html">user
-guide</a>.</p>
+<div class="toc">
+<ul>
+  <li><a href="#L3557">1. Compatibility</a></li>
+  <li><a href="#L2744">2. Run</a></li>
+  <li><a href="#L3113">3. History</a></li>
+</ul>
+</div>
 
-<p>This <a href="index.html#L2357">test suite</a> so far runs in contemporary
-Firefox 24 to 39 (Windows, Linux), Chrome 35 to 43 (Windows, Mac OS X, Android
-4.4), Safari 5 to 8 (Windows, Mac OS X, iOS 8 on iPhone and iPad), Opera 24
-(Windows) and Internet Explorer 10 to 11. Any other browsers <a
-href="index.html#L4276">to report</a>?</p>
+<p>For more about Adj, see the <a href="index.html">user guide</a>.</p>
+
+<h2 id="L3557">1. Compatibility</h2>
+
+<p>This <a href="index.html#L2357">test suite</a> so far <a
+href="#L2744">runs</a> in contemporary Firefox 42 (Windows, Linux), Chrome 46
+(Windows, Mac OS X, Android 4.4), Safari 8 (Mac OS X, iOS 8 on iPhone and
+iPad), Opera 24 (Windows) and Internet Explorer 11. Do you have other browsers
+<a href="index.html#L4276">to report</a>?</p>
+
+<p>Starting in 2015 we have observed computer virus protection injecting
+scripts into web pages. Such extraneous elements cause this test suite to
+incorrectly report failure: Even though having run correctly, extraneous
+elements don't identifiably match expected results. If encountered, there is a
+known workaround: Run this test suite on a machine without that specific virus
+protection. In case you are wondering: "Pause protection…" confirmably
+doesn't stop script injection with at least one well known brand name.</p>
 
 <p>Font metrics differences between browsers still are a challenge. In this
 context, a functioning test suite is a challenge of its own. Problems are not
@@ -78,6 +95,8 @@ mobile device, such as an iPad. If that would cause test failures then simply
 running this test suite a second time appears to work better, possibly because
 the font might be cached on the device already. Maybe this page loading the
 font <span class="liberationMono">here</span> already helps too.</p>
+
+<h2 id="L2744">2. Run</h2>
 <iframe id="tif" name="tif" src="test-adj-ex-002-verticalList.svg" width="600"
 height="300">
 If you see this text then your browser doesn't support iframes.</iframe>
@@ -94,7 +113,7 @@ you can
 
 <p>To help debugging, after selecting a file below, once you see it above, you
 can force an 
-<input name="" type="button" onclick="forceAnAdjDoDoc();" value="Adj.doDoc()"
+<input name="" type="button" onclick="forceAnAdjDoSvg();" value="Adj.doSvg()"
 />.</p>
 
 <table border="1">
@@ -119,7 +138,8 @@ can force an
         target="tif">test-adj-ex-005-textBreaks.svg</a><br />
         <span class="deemphasize">has text, may suffer from font metrics
         differences</span></td>
-      <td>?</td>
+      <td><p>?</p>
+      </td>
     </tr>
     <tr>
       <td><a href="test-adj-ex-006-connection.svg"
@@ -147,6 +167,11 @@ can force an
       <td>?</td>
     </tr>
     <tr>
+      <td><a href="test-adj-ex-023-connection-fromXY-explained.svg"
+        target="tif">test-adj-ex-023-connection-fromXY-explained.svg</a></td>
+      <td>?</td>
+    </tr>
+    <tr>
       <td><a href="test-adj-ex-045-verticalTree.svg"
         target="tif">test-adj-ex-045-verticalTree.svg</a><br />
         <span class="deemphasize">has text, may suffer from font metrics
@@ -168,6 +193,11 @@ can force an
     <tr>
       <td><a href="test-adj-ex-054-floater.svg"
         target="tif">test-adj-ex-054-floater.svg</a></td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td><a href="test-adj-ex-057b-variable-scope.svg"
+        target="tif">test-adj-ex-057b-variable-scope.svg</a></td>
       <td>?</td>
     </tr>
     <tr>
@@ -201,13 +231,13 @@ can force an
       <td>?</td>
     </tr>
     <tr>
-      <td><a href="test-adj-ex-075-telescopicTree.svg"
-        target="tif">test-adj-ex-075-telescopicTree.svg</a></td>
+      <td><a href="test-adj-ex-072-hide.svg"
+        target="tif">test-adj-ex-072-hide.svg</a></td>
       <td>?</td>
     </tr>
     <tr>
-      <td><a href="test-adj-ex-072-hide.svg"
-        target="tif">test-adj-ex-072-hide.svg</a></td>
+      <td><a href="test-adj-ex-075-telescopicTree.svg"
+        target="tif">test-adj-ex-075-telescopicTree.svg</a></td>
       <td>?</td>
     </tr>
     <tr>
@@ -231,12 +261,76 @@ can force an
         differences</span></td>
       <td>?</td>
     </tr>
+    <tr>
+      <td><a href="test-adj-ex-080-include.svg"
+        target="tif">test-adj-ex-080-include.svg</a><br />
+        <span class="deemphasize">known to fail in file:// scheme unless
+        browser permits or is set to permit;</span><br />
+        <span class="deemphasize">if so then you should try running in http://
+        scheme, e.g. <a
+        href="https://srguiwiz.github.com/adj-js/user-docs/tests.html">here</a></span></td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td><a href="test-adj-ex-081-include-fragment.svg"
+        target="tif">test-adj-ex-081-include-fragment.svg</a><br />
+        <span class="deemphasize">known to fail in file:// scheme unless
+        browser permits or is set to permit;</span><br />
+        <span class="deemphasize">if so then you should try running in http://
+        scheme, e.g. <a
+        href="https://srguiwiz.github.com/adj-js/user-docs/tests.html">here</a></span></td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td><a href="test-adj-ex-002-verticalList.html"
+        target="tif">test-adj-ex-002-verticalList.html</a> HTML</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td><a href="test-adj-ex-023-connection-fromXY-explained.html"
+        target="tif">test-adj-ex-023-connection-fromXY-explained.html</a>
+      HTML</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td><a href="test-adj-ex-063-zoomFrames.html"
+        target="tif">test-adj-ex-063-zoomFrames.html</a> HTML</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td><a href="test-adj-ex-080-include.html"
+        target="tif">test-adj-ex-080-include.html</a> HTML<br />
+        <span class="deemphasize">known to fail in file:// scheme unless
+        browser permits or is set to permit;</span><br />
+        <span class="deemphasize">if so then you should try running in http://
+        scheme, e.g. <a
+        href="https://srguiwiz.github.com/adj-js/user-docs/tests.html">here</a></span></td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <td><a href="test-adj-ex-002-verticalList-and-more.html"
+        target="tif">test-adj-ex-002-verticalList-and-more.html</a> HTML<br />
+        <span class="deemphasize">known to fail in file:// scheme unless
+        browser permits or is set to permit;</span><br />
+        <span class="deemphasize">if so then you should try running in http://
+        scheme, e.g. <a
+        href="https://srguiwiz.github.com/adj-js/user-docs/tests.html">here</a></span></td>
+      <td>?</td>
+    </tr>
   </tbody>
 </table>
+
+<h2 id="L3113">3. History</h2>
+
+<p>This test suite has been run and updated since Firefox 24, Chrome 35, Safari
+5, and Internet Explorer 10. Compatibility to such older versions browsers,
+however, is not currently verified.</p>
 <script type="text/javascript">
 //<![CDATA[
 //
-// Copyright (c) 2002-2014, Nirvana Research
+// Simplified BSD License
+//
+// Copyright (c) 2002-2015, Nirvana Research
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -246,22 +340,17 @@ can force an
 //     * Redistributions in binary form must reproduce the above copyright
 //       notice, this list of conditions and the following disclaimer in the
 //       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the copyright holder nor the names of
-//       contributors may be used to endorse or promote products derived from
-//       this software without specific prior written permission.
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS IS" AND
 // ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 // WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT,
-// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
-// OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-// NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
-// EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-// i.e. Modified BSD License
+// DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+// ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+// (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+// LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+// ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+// SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 // ==============================================================================
 //
@@ -325,7 +414,7 @@ can force an
 		}
 		ranSomethingAlready = true;
 		runOnlyOne = true;
-		testIframe.contentWindow.postMessage("Adj.doDocAndVerify|", "*");
+		testIframe.contentWindow.postMessage("Adj.doSvgAndVerify|", "*");
 	}
 
 	function loadFileByNumber(number) {
@@ -354,22 +443,20 @@ can force an
 			// invoke test
 			tdResult.setAttribute("class","testInvoked");
 			tdResult.textContent = "invoked";
-			testIframe.contentWindow.postMessage("Adj.doDocAndVerify|", "*");
+			testIframe.contentWindow.postMessage("Adj.doSvgAndVerify|", "*");
 		},300);
 	}
 
 	// match command by itself, or command followed by one or two parameters separated by |
-	messageRegexp = /^([^|]*)(?:\|([^|]*))?(?:\|(.*))?$/;
+	var messageRegexp = /^([^|]*)(?:\|([^|]*))?(?:\|(.*))?$/;
 
-	windowReceivesMessage = function windowReceivesMessage(evt) {
+	var windowReceivesMessage = function windowReceivesMessage(evt) {
 		// accept any evt.origin
-		var messageCommand;
-		var messageParameter;
 		var messageMatch = messageRegexp.exec(evt.data);
 		if (messageMatch) {
-			messageCommand = messageMatch[1];
-			messageParameter1 = messageMatch[2];
-			messageParameter2 = messageMatch[3];
+			var messageCommand = messageMatch[1];
+			var messageParameter1 = messageMatch[2];
+			var messageParameter2 = messageMatch[3];
 		} else {
 			messageCommand = "";
 		}
@@ -429,9 +516,9 @@ can force an
 		}
 	}
 
-	function forceAnAdjDoDoc() {
+	function forceAnAdjDoSvg() {
 		ranSomethingAlready = true;
-		testIframe.contentWindow.postMessage("Adj.doDoc|", "*");
+		testIframe.contentWindow.postMessage("Adj.doSvg|", "*");
 	}
   //]]></script>
 </body>
